@@ -1,0 +1,28 @@
+<div *ngIf="postInfo.postInfo !== undefined && postInfo.userInfo !== undefined">
+	<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 float-left">
+		<h1 class="mt-4">{{ postInfo.postInfo.title }}</h1>
+		<p class="lead">
+			by
+			<a href="#">{{ postInfo.userInfo.name }}</a>
+		</p>
+
+		<!-- Post Content -->
+		<p>{{ postInfo.postInfo.body }}</p>
+
+		<hr>
+
+		<!-- Comments Form -->
+		<app-post-add-comment [postId]="postInfo.postInfo.id" (addedComment)="addCommentInPostInfo($event)"></app-post-add-comment>
+
+		<app-post-comments [comments]="postInfo.comments"></app-post-comments>
+	</div>
+
+	<!-- Sidebar Widgets Column -->
+	<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 float-left">
+		<!-- Search Widget -->
+		<app-search></app-search>
+
+		<!-- Categories Widget -->
+		<app-categories></app-categories>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<h3 class="text-capitalize">posts</h3>
+<div class="col-md-12 pt-4">
+    <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 float-left mb-4" *ngFor="let post of Posts">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title.length > 20 ? post.title.substring(0, 20) + '...' : post.title }}</h5>
+                <p class="card-text"> {{ post.body.length > 70 ? post.body.substring(0, 70)+'...' : post.body }} </p>
+                <a [routerLink]="'/posts/' + post.id" class="btn btn-primary float-right">View More</a>
+            </div>
+        </div>
+    </div>
+</div>

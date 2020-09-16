@@ -1,0 +1,13 @@
+.card {
+    min-height: 26vh;
+}
+
+.card-body {
+    min-height: 15vh;
+}
+
+.card-text {
+    line-height: 20px;
+    height: 10vh;
+    overflow: hidden;
+}
